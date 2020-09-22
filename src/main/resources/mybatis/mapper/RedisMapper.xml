@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="RedisMapper">
+    <insert id="insertOne">
+        INSERT INTO human (NAME,AGE,MONEY) VALUES (#{name},#{age},#{money});
+    </insert>
+
+    <select id="selectOne" resultType="com.example.exercise.entity.RedisEntity">
+        SELECT * FROM human WHERE _id=#{_id}
+    </select>
+
+    <delete id="deleteOne">
+        DELETE FROM human WHERE _id=#{_id}
+    </delete>
+
+    <update id="updateOne">
+        UPDATE human SET NAME=#{name},MONEY=#{money},AGE=#{age} WHERE _id=#{_id}
+    </update>
+</mapper>
